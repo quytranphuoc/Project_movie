@@ -11,7 +11,7 @@ import {
   registerUser,
   updateUserProfile,
 } from "../Controllers/UserController.js";
-import { protect , admin} from "../middlewares/Auth.js";
+import { protect, admin } from "../middlewares/Auth.js";
 
 const router = express.Router();
 
@@ -24,10 +24,9 @@ router.delete("/", protect, deleteUserProfile);
 router.put("/password", protect, changeUserPassword);
 router.get("/favorites", protect, getLikedMovies);
 router.post("/favorites", protect, addLikedMovie);
-router.post("/favorites", protect, deleteLikeMovies)
-
+router.post("/favorites", protect, deleteLikeMovies);
 
 //Admin ROUTES
-router.get("/", protect, admin, getUsers)
-router.delete(":/id", protect, admin, deleteUser)
+router.get("/", protect, admin, getUsers);
+router.delete(":/id", protect, admin, deleteUser);
 export default router;

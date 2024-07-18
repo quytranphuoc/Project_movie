@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 
 const reviewsSchema = mongoose.Schema(
   {
-    userName: { type: String, required: true },
-    userImage: { type: String, required: true },
+    userName: { type: String },
+    userImage: { type: String },
     rating: { type: Number, required: true },
+    comment: { type: String, required: true },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -34,7 +35,7 @@ const moviesSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    img: {
+    image: {
       type: String,
       required: true,
     },

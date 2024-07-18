@@ -226,7 +226,7 @@ const addLikedMovie = asyncHandler(async (req, res) => {
       // Nếu movieId đã tồn tại trong likedMovies, trả về lỗi
       if (user.likedMovies.includes(movieId)) {
         res.status(400);
-        throw new Error("Movie already liked");
+        throw new Error("Movie already liked"); 
       }
 
       // Thêm movieId mới vào mảng likedMovies của user
@@ -236,7 +236,7 @@ const addLikedMovie = asyncHandler(async (req, res) => {
       res.json(user.likedMovies);
     } else {
       res.status(404);
-      throw new Error("User not found");
+      throw new Error("Movie not found");
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
